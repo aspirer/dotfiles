@@ -129,7 +129,7 @@ endif
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 "解决consle输出乱码
-language messages zh_CN.utf-8
+"language messages zh_CN.utf-8
 
 
 " ======= 引号 && 括号自动匹配 ======= "
@@ -192,7 +192,7 @@ let g:vimrc_email='hzwangpan@corp.netease.com'
 let g:vimrc_homepage='http://aspirer2004.blog.163.com'
 
 " Ctrl + H            将光标移到当前行的行首
-imap <c-h> <ESC>I
+"imap <c-h> <ESC>I
 
 " Ctrl + J            将光标移到下一行的行首
 imap <c-j> <ESC>jI
