@@ -85,7 +85,6 @@ fi
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
-alias nova='nova --no-cache'
 alias sv='sudo virsh'
 
 # Alias definitions.
