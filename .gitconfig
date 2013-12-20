@@ -3,3 +3,5 @@
         name = Wangpan
 [color]
         ui = auto
+[core]
+        editor = vim
