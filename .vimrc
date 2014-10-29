@@ -188,7 +188,6 @@ let g:snips_author='Ruchee'
 
 " :AuthorInfoDetect   自动添加作者、时间等信息，本质是NERD_commenter && authorinfo的结合
 let g:vimrc_author='wangpan'
-let g:vimrc_email='hzwangpan@corp.netease.com'
 let g:vimrc_homepage='http://aspirer2004.blog.163.com'
 
 " Ctrl + H            将光标移到当前行的行首
