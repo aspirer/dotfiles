@@ -19,8 +19,8 @@ Q_USE_SECGROUP=True
 Q_ML2_TENANT_NETWORK_TYPE=vxlan,gre
 NOVA_VIF_DRIVER=nova.virt.libvirt.vif.LibvirtGenericVIFDriver
 Q_ML2_PLUGIN_VXLAN_TYPE_OPTIONS=(vni_ranges=400:500)
-Q_ML2_PLUGIN_MECHANISM_DRIVERS=openvswitch,svlan,l2population
-Q_ML2_PLUGIN_TYPE_DRIVERS=vxlan,gre,svlan,flat,local,vlan
+Q_ML2_PLUGIN_MECHANISM_DRIVERS=openvswitch,l2population
+Q_ML2_PLUGIN_TYPE_DRIVERS=vxlan,gre,flat,local,vlan
 ENABLE_TENANT_TUNNELS=True
 TENANT_TUNNEL_RANGE=50:100
 ##################################
