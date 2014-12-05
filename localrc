@@ -1,0 +1,74 @@
+ENABLED_SERVICES=g-api,g-reg,key,c-api,c-vol,c-sch,n-api,n-crt,n-cpu,n-net,n-cond,n-sch,n-novnc,n-xvnc,n-cauth,mysql,rabbit,u-api,u-post,tempest
+
+##################################
+# Enable Neutron (a single node setup) un-comment below commands
+##################################
+disable_service n-net
+enable_service q-svc
+enable_service q-agt
+enable_service q-dhcp
+enable_service q-l3
+enable_service q-meta
+enable_service q-mon
+enable_service neutron
+Q_PLUGIN=ml2
+Q_SERVICE_PLUGIN_CLASSES=router,vpnaas
+Q_SERVICE_PROVIDER=VPN:sslvpn:neutron.services.vpn.service_drivers.sslvpn.SSLVPNDriver:default
+Q_USE_DEBUG_COMMAND=True
+Q_USE_SECGROUP=True
+Q_ML2_TENANT_NETWORK_TYPE=vxlan,gre
+NOVA_VIF_DRIVER=nova.virt.libvirt.vif.LibvirtGenericVIFDriver
+Q_ML2_PLUGIN_VXLAN_TYPE_OPTIONS=(vni_ranges=400:500)
+Q_ML2_PLUGIN_MECHANISM_DRIVERS=openvswitch,svlan,l2population
+Q_ML2_PLUGIN_TYPE_DRIVERS=vxlan,gre,svlan,flat,local,vlan
+ENABLE_TENANT_TUNNELS=True
+TENANT_TUNNEL_RANGE=50:100
+##################################
+# neutron setting end
+##################################
+
+# Set the default Nova APIs to enable
+NOVA_ENABLED_APIS=osapi_compute,metadata
+
+# SCREEN_LOGDIR=/opt/stack/log
+# OFFLINE=True
+LOG_COLOR=False
+LOGFILE=/opt/stack/log/stack.log
+KEYSTONE_TOKEN_FORMAT=UUID
+
+MYSQL_PASSWORD=cloud
+RABBIT_PASSWORD=cloud
+SERVICE_TOKEN=cloud
+SERVICE_PASSWORD=cloud
+ADMIN_PASSWORD=cloud
+
+REPO_USER=$USER
+
+NOVA_REPO=https://git.oschina.net/openstack/nova.git
+
+GLANCE_REPO=https://git.oschina.net/openstack/glance.git
+
+GLANCECLIENT_REPO=https://git.oschina.net/openstack/python-glanceclient
+
+KEYSTONE_REPO=https://git.oschina.net/openstack/keystone.git
+
+NOVACLIENT_REPO=https://git.oschina.net/openstack/python-novaclient.git
+
+KEYSTONECLIENT_REPO=https://git.oschina.net/openstack/python-keystoneclient
+
+OPENSTACKCLIENT_REPO=https://git.oschina.net/openstack/python-openstackclient
+
+NEUTRON_REPO=https://git.oschina.net/openstack/neutron.git
+
+NEUTRONCLIENT_REPO=https://git.oschina.net/openstack/python-neutronclient.git
+
+UMBRELLA_REPO=https://git.oschina.net/openstack/umbrella.git
+
+TEMPEST_REPO=https://git.oschina.net/openstack/tempest.git
+
+CINDER_REPO=https://git.oschina.net/openstack/cinder
+
+CINDERCLIENT_REPO=https://git.oschina.net/openstack/python-cinderclient
+
+IMAGE_URLS="http://git.oschina.net/gtt116/cirros/raw/d8faaf2dc84ca478965f6c546af77bb998f0ae35/cirros-0.3.0-x86_64-disk.img"
+
