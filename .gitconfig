@@ -1,0 +1,49 @@
+[user]
+        email = hzwangpan@corp.netease.com
+        name = Wangpan
+[alias]
+    a  = add --all
+    ac = !git add -A && git commit
+    bra = branch -a
+    br = branch
+    ca = commit -a
+    cb = checkout -b
+    cc = commit -c ORIG_HEAD
+    c = commit
+    # checkout and track remote branch
+    cm = commit --amend --no-edit
+    co = checkout
+    cp = cherry-pick
+    cr = checkout --track
+    dc = diff --cached
+    d = diff
+    dh = diff HEAD --
+    dump = cat-file -p
+    hist = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    l = log
+    lp = log -p
+    ls = log --stat
+    rc = rebase --continue
+    rdb = push origin --delete
+    remotes = remote -v
+    rh = reset --hard HEAD
+    ri = rebase -i
+    rw = review
+    sl = smart-log
+    st = status -sb
+    tags = tag -l
+    type = cat-file -t
+    uc = reset --soft HEAD^
+[color]
+    status = auto
+    branch = auto
+    ui = auto
+[diff]
+    algorithm = patience
+[push]
+    default = current
+[help]
+    autocorrect = 1
+[core]
+    editor=vim
