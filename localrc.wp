@@ -1,0 +1,43 @@
+# Misc
+ADMIN_PASSWORD=passwd
+DATABASE_PASSWORD=$ADMIN_PASSWORD
+RABBIT_PASSWORD=$ADMIN_PASSWORD
+SERVICE_PASSWORD=$ADMIN_PASSWORD
+SERVICE_TOKEN=$ADMIN_PASSWORD
+#FIXED_RANGE=172.31.1.0/24
+#FLOATING_RANGE=192.168.20.0/25
+#HOST_IP=10.3.4.5
+
+# Enable Logging
+LOGFILE=/opt/stack/logs/stack.sh.log
+VERBOSE=True
+LOG_COLOR=True
+SCREEN_LOGDIR=/opt/stack/logs
+
+## For Keystone
+ENABLED_SERVICES=key
+KEYSTONE_TOKEN_FORMAT=UUID
+
+# Nova - Compute Service
+ENABLED_SERVICES+=,n-api,n-crt,n-obj,n-cpu,n-cond,n-sch
+IMAGE_URLS+=",https://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-x86_64-disk.img"
+
+# Glance - Image Service
+ENABLED_SERVICES+=,g-api,g-reg
+
+# Neutron - Networking Service
+# If Neutron is not declared the old good nova-network will be used
+ENABLED_SERVICES+=,q-svc,q-agt,q-dhcp,q-l3,q-meta,neutron
+
+# Ceilometer - Metering Service (metering + alarming)
+ENABLED_SERVICES+=,ceilometer-acompute,ceilometer-acentral,ceilometer-collector,ceilometer-api
+ENABLED_SERVICES+=,ceilometer-alarm-notify,ceilometer-alarm-eval
+
+# Horizon (Dashboard UI) - (always use the trunk)
+ENABLED_SERVICES+=,horizon
+HORIZON_REPO=https://github.com/openstack/horizon
+HORIZON_BRANCH=master
+
+ENABLED_SERVICES+=,rabbit,tempest,mysql,dstat
+
+ENABLE_HTTPD_MOD_WSGI_SERVICES=False
