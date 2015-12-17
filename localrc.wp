@@ -41,3 +41,5 @@ HORIZON_BRANCH=master
 ENABLED_SERVICES+=,rabbit,tempest,mysql,dstat
 
 ENABLE_HTTPD_MOD_WSGI_SERVICES=False
+
+enable_plugin ceilometer https://git.openstack.org/openstack/ceilometer.git
