@@ -102,5 +102,17 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+source /etc/bash_completion.d/git
+source /etc/bash_completion.d/yum
+
+# show git branch
+function git-branch-name {
+  git symbolic-ref --short -q HEAD 2>/dev/null | sed 's@heads/@@g'
+}
+function git-branch-prompt {
+  local branch=`git-branch-name`
+  if [ $branch ]; then printf " [%s]" $branch; fi
+}
+PS1="\u@\h \[\033[0;36m\]\W\[\033[0m\]\[\033[0;32m\]\$(git-branch-prompt)\[\033[0m\] \$ "
 
 export PAGER=less
